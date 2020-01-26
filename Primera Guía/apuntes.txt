@@ -1,0 +1,3 @@
+El ejercicio 1 no me funcionó
+la ejecución del servidor http-server da error:
+La línea de código utilizada es:  http-server "C:\User\Compaq\Desktop\mi ilusion\Cursos Udemy\JavaScript\Ejercicios\PrimeraGuía"
