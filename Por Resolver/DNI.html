@@ -1,0 +1,58 @@
+<!doctype HTML>
+<html>
+    <!--8 - Dado un array de letras, solicita un número de DNI y calcula que letra le corresponde. 
+        El número no puede ser negativo ni tener más de 8 dígitos. La posición de la letra es el 
+        resultado del módulo del número introducido entre 23
+        const letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z',
+        'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];!-->
+    <head>
+        <script>
+            function CalcularPosicion(){
+                let num = document.getElementById("DNI").value;
+                let result = document.getElementById("resultado");
+                let digitos = (num.toString()).length;
+                validaDNI(num,digitos);
+                const letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z',
+                                'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];
+                console.log("letras: " + letras);
+                const longitud=23;
+                let i = parseInt((num/23),10);
+                console.log("posicion :" + i);
+                result.textContent = "la Posición de la letra es: "+i+ " , la letras es: " + letras[i];
+                
+
+            }
+
+           function validaDNI(num, digitos){
+                if(num < 0){
+                    alert("debe ingresar un Número positivo");
+                }
+
+                if ( digitos >8)
+                {
+                    alert("El número ingresado debe ser menor o igual a 8 digitos");
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <div>
+        <p>Ingrese Número DNI</p>
+        <input id="DNI" value=0>
+        </div>
+        <br>
+        <p>El array de letras es</p>
+        <p>letras = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z',
+            'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E', 'T'];</p>
+       <p>Presione el botón para saber la posición de la letra que corresponde</p>
+        <div>
+           <button onclick="CalcularPosicion()">Calcular Posición</button>
+        </div>
+
+        <div>
+            <br>
+            <span id="resultado"></span>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,34 @@
+<!doctype Html>
+<html>
+    <!-- 3 - Solicita un número e imprime todos los números pares e impares desde 1 hasta ese número con el mensaje "es par" o "es impar"
+        si el número es 5 el resultado será: 1 es impar / 2 es par / 3 es impar / 4 es par / 5 es impar-->
+    <head>
+        <script>
+          function ImparoPar(){
+                var num = document.getElementById("valor").value;
+                var result = document.getElementById("resultado");
+                var tipo;
+                for( let i=num; i>=1; i--)
+                {
+                  tipo =(i%2)?"Impar":"Par";
+                  result.textContent = i +" es "+ tipo + " / " + result.textContent;
+                }
+            }
+         
+        </script>
+    </head>
+    <body>
+        <div>
+            <p>Ingrese un número</p>
+            <input id="valor" value="0">  
+        </div>
+        <div>
+            <br>
+            <button onclick="ImparoPar()">Pares e Impares</button>
+        </div> 
+        <br>
+        <div>
+            <span id="resultado"></span>
+        </div>
+    </body>
+</html>

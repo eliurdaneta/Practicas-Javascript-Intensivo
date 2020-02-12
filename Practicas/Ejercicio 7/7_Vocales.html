@@ -1,0 +1,39 @@
+<!doctype HTML>
+<HTML>
+    <!--9 - Solicitar al usuario una palabra y mostrar el número 
+        de consonantes, vocales y longitud de la palabra.-->
+    <head>
+        <script>
+        function vocal(){
+            let word = document.getElementById("palabra").value;
+            let resulv= document.getElementById("vocales");
+            let resulc= document.getElementById("consonantes");
+            let result= document.getElementById("longitud");
+            let longitud = word.length;
+            let numVocales = word.match(/[aeiou]/gi).length;
+            let numConsonantes = parseInt(longitud,10) - parseInt(numVocales,10);
+            resulv.textContent = "El número de vocales es: " + numVocales;
+            resulc.textContent = "El número de consonantes es: " + numConsonantes;
+            result.textContent = "La longitud de la palabra es: " + longitud;
+
+        }   
+        </script>
+    </head>
+
+    <body>
+        <p>Ingresa una palabara</p>
+        <input id="palabra">
+        <div>
+          <br>
+            <button onclick="vocal()">Obtener</button>
+        </div>
+        <div>
+            <br>
+            <scan id="vocales"></scan>
+            <br>
+            <scan id="consonantes"></scan>
+            <br>
+            <scan id="longitud"></scan>
+        </div>
+    </body>
+</HTML>

@@ -1,0 +1,86 @@
+<!doctype HTML>
+<html>
+    <!--7 - Crea 3 arrays. El primero tendra 5 números y el segundo se llamará pares 
+        y el tercero impares, ambos estarán vacíos. 
+        Después multiplica cada uno de los números del primer array por un número
+        aleatorio entre 1 y 10, si el resultado es par guarda ese número en el 
+        array de pares y si es impar en el array de impares.
+        Muestra por consola: -la multiplicación que se produce junto con su resultado
+        con el formato 2 x 3 = 6 -el array de pares e impares !-->
+    <head>
+        <script>
+            function CalcularArray(){
+              let par = document.getElementById("pares");  
+              let impar = document.getElementById("impares");  
+              let array1=[];
+              let Pares = [];
+              let Impares = [];
+              let aleatorio;
+              let valor;
+              let resultPares;
+              let resultImpares;
+
+              // 1.- Se solicitara los números desde el prompt para llenar el array 1
+              for(i=0; i<=4; i++)
+              {
+                  array1[i]= prompt("ingrese número de la posición: " + i + " del Array");
+              }
+
+              for(i=0; i<=4; i++)
+              {
+              aleatorio = parseInt((Math.random()*10 + 1),10);
+              valor = aleatorio * array1[i];
+              if(valor%2){
+                  Impares[i] = valor;
+                  Pares[i] = 0;
+                 if (resultImpares === undefined)
+                  {
+                    resultImpares = aleatorio + "x"+  array1[i] + "="+ Impares[i];
+                  }
+                  else{
+                    resultImpares = resultImpares + " , " + aleatorio + "x"+  array1[i] + "="+ Impares[i];
+                  }
+               }
+              else{
+                  Pares[i] = valor;
+                  Impares[i] = 0;
+                   if(resultPares === undefined)
+                    {
+                        resultPares = aleatorio + "x"+ array1[i]+ "="+Pares[i];
+                    }
+                    else{
+                        resultPares = resultPares + " , " + aleatorio + "x"+array1[i]+ "="+Pares[i];
+                    }
+                }
+              }
+              if(resultPares===undefined){
+                par.textContent = "El array de pares no arrojó resultado";
+              }
+              else{
+                par.textContent = "El array de pares es: " + resultPares;
+              }
+              if(resultImpares===undefined){
+                impar.textContent = "El array de impares no arrojó resultado";
+              }
+              else{
+                impar.textContent = "El array de impares es: " + resultImpares;
+              }
+            }
+        </script>
+    </head>
+    <body>
+        <div>
+        <p>Presione para Cálcular los Array Pares e Impares</p>
+        <br>
+        <button onclick="CalcularArray()">Calcular</button>
+        </div>
+        <br>
+        <div>
+        <span id="pares"></span>
+        </div>
+        <br>
+        <div>
+        <span id="impares"></span>
+        </div>
+    </body>
+</html>

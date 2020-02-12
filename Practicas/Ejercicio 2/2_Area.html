@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+    <!-- 2 - Escribe un programa que pueda calcular el área de 3 figuras geométricas, triángulo, rectángulo y círculo.
+        En primer lugar pregunta de qué figura se quiere calcular el área, después solicita los datos que necesites para 
+        calcularlo. triángulo = b * h/2 rectángulo = b * h círculo = π * r2 (pi * radio al cuadrado)-->
+
+    <!-- En este ejercicio también puedes observar el uso de case en Javascript y el uso de prompt-->
+    <head>
+     <script>
+         function CalculoArea(){
+             var figura = document.getElementById("tipo").value;
+             var result = document.getElementById("resultado");
+             var base;
+             var altura;
+             var radio;
+             var area;
+
+             switch(figura){
+                 case '1':
+                 base = prompt('Introduzca Base del Triangulo');
+                 altura = prompt('Introduzca Altura del Triangulo');
+                 area =(base * (altura/2));
+                 result.textContent = "El área del triangulo es: " + area;
+                 break;
+
+                 case '2':
+                 base = prompt('Introduzca Base del Rectangulo');
+                 altura = prompt('Introduzca Altura del Rectangulo');
+                 area =(base * altura);
+                 result.textContent = "El área del rectangulo es: " + area;
+                 break;
+
+                 case '3':
+                 radio = prompt('Introduzca el Radio del Circulo');
+                 area =((radio * radio) * 3.14);
+                 result.textContent = "El área del circulo es: " + area;
+                 break;
+                 
+                 default:
+                 result.textContent ="Figura geometrica no especificada";
+                 break;
+             }
+         }
+     </script>
+    </head>
+    <body>
+        <div>
+        <p>Selecciona la figura a calcular el área<p>
+            <select id ="tipo">
+            <option disabled value ="0"> Seleccione una Opción/option>
+            <option value ="1"> Triángulo</option> 
+            <option value ="2"> Rectángulo</option>
+            <option value ="3"> Círculo</option>
+            </select>
+        </div>
+        
+        <div>
+            <button onclick="CalculoArea()">Obtener área</button>
+        </div>
+        </br>
+        <div> <span id="resultado"></span>
+        </div>
+    </body>
+</html>

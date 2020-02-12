@@ -1,0 +1,44 @@
+<!doctype HTML>
+<html>
+    <!-- 8.-Dado un array que contiene ["azul", "amarillo", "rojo", "verde", "rosa"]
+    determinar si un color introducido por el usuario se encuentra
+    dentro del array o no.-->
+    <head>
+        <script>
+          function VerificaColor(){
+              let color = document.getElementById("entrada").value;
+              let result = document.getElementById("resultado");
+              let array = ["azul", "amarillo", "rojo", "verde", "rosa"];
+              let valor = false;
+              
+              for(let i=0; i<array.length; i++){
+                let col = array[i];
+                console.log("col: "+ col);
+                if(col == color){
+                    valor=true;
+                    console.log("Ingresó en if");
+                }
+             }
+              valor? result.textContent="El color " + color+ " está en el array":
+              result.textContent="El color " + color+ " no está en el array";
+
+          }
+        </script>
+    </head>
+    <body>
+        <div>
+            <p>Ingrese un color</p>
+            <input id="entrada">
+        </div>
+
+        <div>
+            <br>
+            <button onclick="VerificaColor()">Verificar Color</button>
+        </div>
+
+        <div>
+            <br>
+            <span id="resultado"></span>
+        </div>
+    </body>
+</html>

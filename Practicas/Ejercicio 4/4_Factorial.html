@@ -1,0 +1,62 @@
+<!doctype HTML>
+<html>
+    <!--5 - Escriba un programa que pida un número 
+        entero mayor que cero y calcule su factorial. El factorial es el resultado de multiplicar ese número por sus anteriores hasta la unidad.
+      !5 = 5*4*3*2*1 = 120 !-->
+    <head>
+       <script>
+        function CalcularFactorial(){
+        let num = document.getElementById("numero").value;
+        let result = document.getElementById("resultado");
+        let estado = valida(num);
+         
+           if(estado)
+           {
+            result.textContent = "El factorial de "+ num + " es: " + factorial(num);
+           }
+                  
+        }
+
+         // 1.- Validar que el número ingresado sea mayor que cero
+         function valida(num){
+            if(num ==0 || num <0)
+             {
+              alert("Debe ingresar un número mayor que cero")
+              estado = false;
+            }
+            else{
+                estado=true;
+            }
+            return estado;
+         }
+         
+         //2.- Se Calcula el factorial de un número
+         function factorial(num){
+           let fact =1;
+             for(let i=num ; i>=1; i--)
+             {
+                 fact= i * fact;
+             }
+             
+             return fact;
+         }
+
+        
+       </script>
+    </head>
+
+    <body>
+        <div>
+        <p>Ingrese un número mayor que cero</p>
+        <input id="numero" value=0>
+        </div>
+        <br>
+        <div>
+            <button onclick="CalcularFactorial()">Factorial</button>
+        </div>
+        <br>
+        <div>
+            <span id="resultado"></span>
+        </div>
+    </body>
+</html>

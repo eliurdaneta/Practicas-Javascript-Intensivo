@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+    <!-- 1 - Solicita un nombre, la edad y muestra por consola el mensaje "Hola ____, 
+        tienes ____ años y el año que viene tendrás ____ años"-->
+
+        <!-- En este ejercicio podrás ver como escribir la ñ desde javascript"-->
+    <head>
+        <script>
+            function Mensaje(){
+                var name = document.getElementById("nombre").value;
+                var old = document.getElementById("edad").value;
+                var mesage= "Hola " + name + " tienes " + old + " a\u00F1os";
+                var resul = document.getElementById("resultado");
+                 resul.textContent = mesage;
+            }
+        </script>
+    
+    </head>
+    <body>
+        <div>
+            <p>Ingresa nombre<p>
+                <input id="nombre" value=" ">
+            <p>Ingresa edad<p>
+                <input id="edad" value="0">
+        </div>
+        <div>
+            <button onclick="Mensaje()">Mostrar Mensaje</button>
+        </div>
+        
+        <div>
+            <br>
+            <span id="resultado"></span>
+        </div>
+    </body>
+</html>

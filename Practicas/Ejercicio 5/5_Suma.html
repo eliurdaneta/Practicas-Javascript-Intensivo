@@ -1,0 +1,41 @@
+<!doctype HTML>
+<html>
+    <!--6 - Escribe un programa que permita ir introduciendo 
+        una serie indeterminada de números mientras su suma no supere 50.
+        Cuando esto ocurra, se debe mostrar el total acumulado y 
+        el contador de cuantos números se han introducido !-->
+    <head>
+        <script>
+         function CalcularSuma()
+         {
+             let result = document.getElementById("resultado");
+             let contador = 0;
+             let suma = 0;
+                   while(suma < 50)
+                    {
+                        let valor = prompt("ingrese numero a sumar");
+                        suma = parseInt(valor, 10) + parseInt(suma, 10);
+                        contador = contador + 1;
+                        
+                    }
+                    result.textContent = "El total acumulado es: " + suma + 
+                    " el total de números introducidos es: " + contador;                
+         }
+        </script>
+    </head>
+
+    <body>
+        <div>
+            <p>Presione el botón para empezar a sumar</p>
+            <br>
+            <button onclick="CalcularSuma()">Sumar</button>
+        </div>
+
+        <div>
+            <br>
+            <span id="resultado"></span>
+        </div>
+
+
+    </body>
+</html>  
